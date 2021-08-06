@@ -78,9 +78,6 @@ namespace Veripark.Business.Concrete
                     isSuccess = true,
                     Data = lPaymant
                 };
-
-
-
             }
             else
             {
