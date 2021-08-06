@@ -87,7 +87,7 @@ namespace Veripark.Business.Concrete
                 return new rsCalculatePenalty()
                 {
                     isSuccess = false,
-                    Error = "Error"
+                    Error = "The date the book was returned The date the book was checked must be large."
                 };
             }
         }
