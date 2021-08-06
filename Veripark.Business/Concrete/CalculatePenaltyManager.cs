@@ -38,7 +38,7 @@ namespace Veripark.Business.Concrete
             if (DayDifference.TotalDays > 0)
             {
                 List<string> lPaymant = new List<string>();
-                Utilities.Utility();
+              
                 foreach (string countryID in splitCountries)
                 {
                     int holiday = 0;

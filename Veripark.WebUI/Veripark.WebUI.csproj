@@ -90,6 +90,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Global.asax" />
     <Content Include="index.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -105,6 +106,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -151,6 +155,10 @@
     <ProjectReference Include="..\Veripark.Business\Veripark.Business.csproj">
       <Project>{F4FADF37-B025-482F-9153-B3A5B0A59266}</Project>
       <Name>Veripark.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Veripark.Core\Veripark.Core.csproj">
+      <Project>{D937AC5A-6A77-4960-A642-E63EA52C2654}</Project>
+      <Name>Veripark.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Veripark.DataAccess\Veripark.DataAccess.csproj">
       <Project>{82A722CA-629A-48DE-BEFE-9A0FA3D5EF92}</Project>
