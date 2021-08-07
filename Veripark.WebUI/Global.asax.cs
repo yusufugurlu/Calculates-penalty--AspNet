@@ -13,7 +13,7 @@ namespace Veripark.WebUI
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Utilities.Utility();
+            Utilities.CreateObject();
         }
 
         protected void Session_Start(object sender, EventArgs e)

@@ -6,24 +6,21 @@ using System.Threading.Tasks;
 
 namespace Veripark.Core.Utilits
 {
-   public class Utilities
+    public class Utilities
     {
         private static Utilities _Utilities;
 
-        public Utilities()
-        {
-            Day = 10;
-            DayOfMoney = 5;
-        }
 
-        public static Utilities Utility()
+        public static Utilities CreateObject()
         {
-                if (_Utilities == null)
-                {
-                    _Utilities = new Utilities();
-                }
-                return _Utilities;
-           
+            if (_Utilities == null)
+            {
+                _Utilities = new Utilities();
+                Day = 10;
+                DayOfMoney = 5;
+            }
+            return _Utilities;
+
         }
         public static int Day { get; set; }
         public static double DayOfMoney { get; set; }
