@@ -30,26 +30,34 @@ namespace Veripark.WebUI
 
         protected void btnCalculate_Click(object sender, EventArgs e)
         {
-          var response=  _ICalculatePenalty.CalculatePenalty(new Entities.Request.rqCalculatePenalty()
+            try
             {
-                dateCheck = DateTime.Parse(clnDateCheck.Value.ToString()),
-                dateReturn = DateTime.Parse(clnDateReturn.Value.ToString()),
-                countries =hdSelectCountry.Value
-          });
-
-            if (response.isSuccess)
-            {
-                List<string> list = (List<string>)response.Data;
-                string tmp = "";
-                foreach (var item in list)
+                var response = _ICalculatePenalty.CalculatePenalty(new Entities.Request.rqCalculatePenalty()
                 {
-                    tmp += item + "</br>";
+                    dateCheck = DateTime.Parse(clnDateCheck.Value.ToString()),
+                    dateReturn = DateTime.Parse(clnDateReturn.Value.ToString()),
+                    countries = hdSelectCountry.Value
+                });
+
+                if (response.isSuccess)
+                {
+                    List<string> list = (List<string>)response.Data;
+                    string tmp = "";
+                    foreach (var item in list)
+                    {
+                        tmp += item + "</br>";
+                    }
+                    lblResult.InnerHtml = tmp;
                 }
-                lblResult.InnerHtml = tmp;
+                else
+                {
+                    lblResult.InnerHtml = response.Error.ToString();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblResult.InnerHtml = response.Error.ToString();
+
+                lblResult.InnerHtml = "Error";
             }
         }
     }

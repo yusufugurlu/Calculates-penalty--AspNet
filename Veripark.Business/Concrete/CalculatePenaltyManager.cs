@@ -63,13 +63,13 @@ namespace Veripark.Business.Concrete
                     if (isReturnDay(result))
                     {
                         double resultAdd = double.Parse((result - Utilities.Day).ToString()) * Utilities.DayOfMoney;
-                        lPaymant.Add("Country: " + countryName + ", " + (result - Utilities.Day).ToString() + " Day(s) X " + Utilities.DayOfMoney + "$  = " + resultAdd.ToString() + " $");
+                        lPaymant.Add("Country: " + countryName + ", TotalDay(s)= "+result.ToString()+" , " + (result - Utilities.Day).ToString() + " Day(s) X " + Utilities.DayOfMoney + "$  = " + resultAdd.ToString() + " $");
 
                     }
                     else
                     {
                         double resultAdd = double.Parse((result - Utilities.Day).ToString()) * Utilities.DayOfMoney;
-                        lPaymant.Add("Country: " + countryName + ", 0 day(s) =  0 $");
+                        lPaymant.Add("Country: " + countryName + ", TotalDay(s)="+result.ToString()+" 0 day(s) =  0 $");
                     }
                 }
 
