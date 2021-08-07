@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\Abstract\IEntity.cs" />
     <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\CountryHoliday.cs" />
     <Compile Include="Enum\enCountry.cs" />

@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Veripark.Entities.Entity.Abstract;
 
 namespace Veripark.Entities.Models
 {
-    public partial class Country
+    public partial class Country: IEntity
     {
         public Country()
         {
