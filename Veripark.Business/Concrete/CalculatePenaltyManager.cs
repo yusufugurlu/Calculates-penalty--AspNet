@@ -16,10 +16,10 @@ namespace Veripark.Business.Concrete
     public class CalculatePenaltyManager : ICalculatePenalty
     {
 
-        private ICountryHolidayService _ICountryHolidayService;
+        private CountryHolidayDal _ICountryHolidayDal;
         public CalculatePenaltyManager()
         {
-            _ICountryHolidayService = new CountryHolidayManager(new CountryHolidayDal());
+            _ICountryHolidayDal = new CountryHolidayDal();
         }
 
 
@@ -42,7 +42,7 @@ namespace Veripark.Business.Concrete
                 foreach (string countryID in splitCountries)
                 {
                     int holiday = 0;
-                    List<CountryHoliday> lst = _ICountryHolidayService.GetListWithCountry();
+                    List<CountryHoliday> lst = _ICountryHolidayDal.GetAllWithCountry();
                     var tmpList = lst.Where(x => x.Country.ID == int.Parse(countryID)).ToList();
                     string countryName = "";
                     holiday = SetWeekend((enCountry)int.Parse(countryID), DayDifference, _rqCalculatePenalty.dateCheck);
