@@ -143,7 +143,14 @@ namespace Veripark.Business.Concrete
             }
             return total;
         }
-        #region Eski
+
+        private bool isReturnDay(int result)
+        {
+            if (result > Utilities.Day) return true;
+            return false;
+        }
+
+        #region Eski CalculatePenalty
         /*
       public rsCalculatePenalty CalculatePenalty(rqCalculatePenalty _rqCalculatePenalty)
       {
@@ -211,12 +218,7 @@ namespace Veripark.Business.Concrete
               };
           }
       }
-      */ 
+      */
         #endregion
-        private bool isReturnDay(int result)
-        {
-            if (result > Utilities.Day) return true;
-            return false;
-        }
     }
 }
